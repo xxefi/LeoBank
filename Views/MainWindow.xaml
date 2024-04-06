@@ -1,0 +1,18 @@
+﻿<Window x:Class="LeoBank.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeoBank.Views"
+        xmlns:viewModel="clr-namespace:LeoBank.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=viewModel:MainWindowViewModel}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Leobank" Height="894" Width="492">
+
+    <Grid>
+        <ContentControl Content="{Binding CurrentView}"/>
+        
+    </Grid>
+</Window>

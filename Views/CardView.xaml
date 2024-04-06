@@ -1,0 +1,237 @@
+﻿<UserControl x:Class="LeoBank.Views.CardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeoBank.Views"
+             xmlns:viewModel="clr-namespace:LeoBank.ViewModels"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DataContext="{d:DesignInstance Type=viewModel:CardViewModel}"
+             mc:Ignorable="d"
+             Background="White"
+             d:DesignHeight="854" d:DesignWidth="492">
+    <Grid>
+        <Border
+        MinWidth="380"
+        Margin="20,105,20,0"
+        Background="#000"
+        VerticalAlignment="Top"
+        Padding="30"
+        MaxWidth="170"
+        CornerRadius="22" Height="232" RenderTransformOrigin="0.5,0.5">
+            <Border.Effect>
+                <DropShadowEffect
+                BlurRadius="10"/>
+            </Border.Effect>
+        </Border>
+        <Border
+        MinWidth="380"
+        Margin="-4,129,-4,0"
+        Background="#333333"
+        VerticalAlignment="Top"
+        Padding="30"
+        MaxWidth="150" Height="38" RenderTransformOrigin="0.5,0.5">
+        </Border>
+
+        <TextBlock
+            Text="{Binding UserCard.CardNumber}"
+            Foreground="White"
+            FontSize="24"
+            Margin="74,206,131,619"
+            FontWeight="Regular"
+            FontFamily="Roboto Mono"/>
+
+        <Button
+        Command="{Binding Copy}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="345,208,0,0" 
+        Height="27"
+        HorizontalAlignment="Left"
+        Foreground="Gray"
+        BorderBrush="Black"
+        Background="Black">
+            <md:PackIcon
+            Width="34" Kind="ContentCopy" Height="20" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+        <Image
+            Source="/Assets/Date.png" Margin="78,291,360,535"/>
+
+        <TextBlock
+         Text="{Binding ExpiryDateFormatted}"
+         Foreground="White"
+         FontSize="17"
+         Margin="78,272,346,561"
+         FontWeight="Regular"
+         FontFamily="Roboto Mono"/>
+
+        <Image
+        Source="/Assets/CVV.png" Margin="158,290,290,533"/>
+
+        <TextBlock
+         Text="{Binding UserCard.CVV}"
+         Foreground="White"
+         FontSize="18"
+         Margin="158,271,273,561"
+         FontWeight="Regular"
+         FontFamily="Roboto Mono"/>
+
+        <Button
+       Command="{Binding Back}"
+       Width="48" VerticalAlignment="Top"
+       Style="{StaticResource MaterialDesignFlatLightBgButton}"
+       Margin="208,807,0,0" 
+       Height="47"
+       HorizontalAlignment="Left"
+       Foreground="Black"
+       md:ButtonAssist.CornerRadius="27.5"
+       BorderBrush="White"
+       Background="whitesmoke">
+            <md:PackIcon
+       Width="32" Kind="KeyboardArrowDown" Height="42" HorizontalAlignment="Center"/>
+        </Button>
+
+
+        <Button
+            Content="Заблокировать пластик"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Foreground="Black"
+            Margin="12,389,144,433"
+            Background="White"
+            BorderBrush="White"
+            FontSize="18"
+            FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+            Text="Вы всегда можете его разблокировать"
+            Margin="74,421,102,405"
+            Foreground="Gray"
+            FontSize="17"
+            FontFamily="SF UI Display Normal"/>
+
+        <Button
+        Content="Настроить Apple Pay"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Foreground="Black"
+        Margin="0,454,156,368"
+        Background="White"
+        BorderBrush="White"
+        FontSize="18"
+        FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+         Text="Вы ещё не настроили оплату через Apple Pay"
+         Margin="74,486,25,340"
+         Foreground="Gray"
+         FontSize="17"
+         FontFamily="SF UI Display Normal"/>
+
+        <Button
+         Content="Дизайн карты в Apple Pay"
+         Style="{StaticResource MaterialDesignFlatLightBgButton}"
+         Foreground="Black"
+         Margin="20,530,136,292"
+         Background="White"
+         BorderBrush="White"
+         FontSize="18"
+         FontFamily="SF UI Display Normal"/>
+
+        <Button
+         Content="Лимит интернет-оплат в месяц"
+         Style="{StaticResource MaterialDesignFlatLightBgButton}"
+         Foreground="Black"
+         Margin="50,596,106,226"
+         Background="White"
+         BorderBrush="White"
+         FontSize="18"
+         FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+          Text="Осталось 584.56 ₼ из 5000.00 ₼"
+          Margin="78,628,45,198"
+          Foreground="Gray"
+          FontSize="17"
+          FontFamily="SF UI Display Normal"/>
+
+        <Button
+         Content="Изменить ПИН-Код"
+         Style="{StaticResource MaterialDesignFlatLightBgButton}"
+         Foreground="Black"
+         Margin="0,667,172,155"
+         Background="White"
+         BorderBrush="White"
+         FontSize="18"
+         FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+          Text="карты и приложения"
+          Margin="78,699,45,127"
+          Foreground="Gray"
+          FontSize="17"
+          FontFamily="SF UI Display Normal"/>
+
+        <Button
+          Content="Настройки безопасности"
+          Style="{StaticResource MaterialDesignFlatLightBgButton}"
+          Foreground="Black"
+          Margin="20,732,152,90"
+          Background="White"
+          BorderBrush="White"
+          FontSize="18"
+          FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+          Text="Банкоматы, бесконтакт, магнитная полоса"
+          Margin="67,764,56,62"
+          Foreground="Gray"
+          FontSize="17"
+          FontFamily="SF UI Display Normal"/>
+
+        <md:PackIcon
+        Width="46"
+            Kind="No"
+            Height="34"
+            Margin="12,393,0,0"/>
+
+        <md:PackIcon
+        Width="46"
+            Kind="MobilePhoneWireless"
+            Height="35"
+            Margin="18,459,0,0"/>
+
+        <md:PackIcon
+        Width="46"
+        Kind="PaintOutline"
+        Height="34"
+        Margin="18,530,0,0"/>
+
+        <md:PackIcon
+        Width="46"
+        Kind="Internet"
+        Height="34"
+        Margin="18,601,0,0"/>
+
+        <md:PackIcon
+    Width="78"
+    Kind="MoreVert"
+    Height="34"
+    RenderTransformOrigin="0.5,0.5" Margin="0,674,0,0">
+            <md:PackIcon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </md:PackIcon.RenderTransform>
+        </md:PackIcon>
+
+        <md:PackIcon
+        Width="46"
+        Kind="Security"
+        Height="34"
+        Margin="18,740,0,0"/>
+
+    </Grid>
+</UserControl>

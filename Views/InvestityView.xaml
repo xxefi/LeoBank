@@ -1,0 +1,316 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeoBank.Views"
+             xmlns:viewModel="clr-namespace:LeoBank.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="LeoBank.Views.InvestityView"
+             mc:Ignorable="d" 
+             Background="#C3D4DE"
+             d:DataContext="{d:DesignInstance Type={x:Type viewModel:InvestityViewModel}}"
+             d:DesignHeight="854" d:DesignWidth="492">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="328*"/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            TextAlignment="Center"
+            FontSize="39"
+            FontWeight="Bold"
+            FontFamily="SF UI Display Normal"
+            Margin="150,114,126,36" RenderTransformOrigin="0.5,0.5">
+            <Run Text="$"
+                 Foreground="Black"
+                 BaselineAlignment="Center"/>
+            <Run Text="0.00"
+            Foreground="Black"
+            BaselineAlignment="Center"/>
+        </TextBlock>
+        <Border
+        MinWidth="490"
+        Margin="-4,110,0,0"
+        Background="#fff"
+        VerticalAlignment="Top"
+        Padding="30"
+        MaxWidth="150"
+        CornerRadius="58" Height="668" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Button
+                Content="Портфель"
+                HorizontalAlignment="Left"
+                Margin="42,-1,0,577"
+                Command="{Binding RequestForCredite}"
+                BorderBrush="Black"
+                Background="Black"
+                BorderThickness="2"
+                Style="{DynamicResource MaterialDesignFlatLightBgButton}"
+                Foreground="White"
+                materialDesign:ButtonAssist.CornerRadius="18"
+                Width="111"/>
+        </Border>
+
+        <Button
+            Command="{Binding DashBoard}"
+            Width="93" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Margin="0,586,0,0" 
+            Height="70"
+            HorizontalAlignment="Left"
+            Foreground="Gray"
+            BorderBrush="White"
+            Background="White" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Width="62" Height="61">
+                <materialDesign:PackIcon
+                    Width="63"
+                    Kind="HomeOutline"
+                    Height="36"
+                    RenderTransformOrigin="0.5,0.5"
+                    VerticalAlignment="Center"/>
+                <TextBlock
+                    Text="Главная"
+                    FontFamily="SF UI Display Normal"
+                    Margin="-65,50,0,0"
+                    VerticalAlignment="Center"
+                    FontSize="14" Width="53" Height="17"/>
+            </StackPanel>
+        </Button>
+        <Button
+            Command="{Binding Credite}"
+            Width="93" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Margin="89,586,0,0" 
+            Height="70"
+            HorizontalAlignment="Left"
+            Foreground="Gray"
+            BorderBrush="White"
+            Background="White" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Width="62" Height="64">
+                <materialDesign:PackIcon
+                    Width="63"
+                    Kind="ChartPieOutline"
+                    Height="33"
+                    RenderTransformOrigin="0.5,0.5"
+                    VerticalAlignment="Center"/>
+                <TextBlock
+                    Text="Кредит"
+                    Margin="-65,50,0,0"
+                    FontFamily="SF UI Display Normal"
+                    VerticalAlignment="Center"
+                    FontSize="13" Width="46" Height="20"/>
+            </StackPanel>
+        </Button>
+        <Button
+            Command="{Binding Investity}"
+            Width="114" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Margin="181,587,0,0" 
+            Height="70"
+            HorizontalAlignment="Left"
+            Foreground="Black"
+            BorderBrush="White"
+            Background="White" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Width="78" Height="64">
+                <materialDesign:PackIcon
+                    Width="78"
+                    Kind="PollBox"
+                    Height="31"
+                    RenderTransformOrigin="0.5,0.5"
+                    VerticalAlignment="Center"/>
+                <TextBlock
+                    Text="Инвестиции"
+                    Margin="-77,50,0,0"
+                    FontFamily="SF UI Display Normal"
+                    VerticalAlignment="Center"
+                    FontSize="13" Width="76" Height="21"/>
+            </StackPanel>
+        </Button>
+        <Button
+            Command="{Binding EDV}"
+            Width="117" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Margin="287,587,0,0" 
+            Height="70"
+            HorizontalAlignment="Left"
+            Foreground="Gray"
+            BorderBrush="White"
+            Background="White" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Width="91" Height="64">
+                <materialDesign:PackIcon
+                    Width="92"
+                    Kind="ReceiptClockOutline"
+                    Height="31"
+                    RenderTransformOrigin="0.5,0.5"
+                    VerticalAlignment="Center"/>
+                <TextBlock
+                    Text="Возврат НДС"
+                    Margin="-91,50,0,0"
+                    FontFamily="SF UI Display Normal"
+                    VerticalAlignment="Center"
+                    FontSize="13" Width="84" Height="20"/>
+            </StackPanel>
+        </Button>
+        <Button
+            Command="{Binding Order}"
+            Width="83" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Margin="390,587,0,0" 
+            Height="70"
+            HorizontalAlignment="Left"
+            Foreground="Gray"
+            BorderBrush="White"
+            Background="White" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Width="78" Height="64">
+                <materialDesign:PackIcon
+                    Width="78"
+                    Kind="MoreVert"
+                    Height="34"
+                    RenderTransformOrigin="0.5,0.5"
+                    VerticalAlignment="Center">
+                    <materialDesign:PackIcon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </materialDesign:PackIcon.RenderTransform>
+                </materialDesign:PackIcon>
+                <TextBlock
+                    Text="Ещё"
+                    Margin="-77,50,0,0"
+                    FontFamily="SF UI Display Normal"
+                    VerticalAlignment="Center"
+                    FontSize="13" Width="28" Height="20"/>
+            </StackPanel>
+        </Button>
+        <TextBlock
+     Text="Инвестировали    $0.00"
+     Margin="171,162,126,5"
+     Foreground="Gray"
+     FontSize="14"
+     FontFamily="SF UI Display Normal"/>
+        <TextBlock
+        Text="Заработали            $0.00"
+        Margin="170,185,128,638"
+        Foreground="Gray"
+        FontSize="14"
+        FontFamily="SF UI Display Normal" Grid.RowSpan="2"/>
+        <TextBlock
+        Text="Акции"
+        Margin="193,146,224,479"
+        Foreground="Gray"
+        FontSize="18"
+        FontFamily="SF UI Display Normal" Grid.Row="1"/>
+        <TextBlock
+        Text="Крипто"
+        Margin="268,146,146,479"
+        Foreground="Gray"
+        FontSize="18"
+        FontFamily="SF UI Display Normal" Grid.Row="1"/>
+        <TextBlock
+        Text="Фонды"
+        Margin="346,146,60,479"
+        Foreground="Gray"
+        FontSize="18"
+        FontFamily="SF UI Display Normal" Grid.Row="1"/>
+        <TextBlock
+        Text="КОЛЕКЦИИ"
+        Margin="29,195,360,431"
+        Foreground="DarkGray"
+        FontSize="18"
+        FontFamily="SF UI Display Normal" Grid.Row="1"/>
+        <Border
+        MinWidth="230"
+        Margin="6,0,239,0"
+        Background="WhiteSmoke"
+        VerticalAlignment="Center"
+        Padding="30"
+        MaxWidth="150"
+        CornerRadius="38" Height="162" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+        </Border>
+        <Border
+        MinWidth="230"
+        Margin="4,419,242,0"
+        Background="WhiteSmoke"
+        VerticalAlignment="Top"
+        Padding="30"
+        MaxWidth="150"
+        CornerRadius="38" Height="162" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+        </Border>
+        <Border
+        MinWidth="230"
+        Margin="252,0,0,0"
+        Background="WhiteSmoke"
+        VerticalAlignment="Center"
+        Padding="30"
+        MaxWidth="150"
+        CornerRadius="38" Height="162" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+        </Border>
+        <Border
+    MinWidth="230"
+    Margin="247,420,0,0"
+    Background="WhiteSmoke"
+    VerticalAlignment="Top"
+    Padding="30"
+    MaxWidth="150"
+    CornerRadius="38" Height="162" RenderTransformOrigin="0.5,0.5" Grid.Row="1"/>
+        <Image
+            Source="/Assets/Collections.png" Margin="43,260,310,356" Grid.Row="1"/>
+        <Image
+            Source="/Assets/Collections2.png" Margin="280,266,107,350" Grid.Row="1"/>
+        <Image
+        Source="/Assets/Collections3.png" Margin="43,432,344,184" Grid.Row="1"/>
+        <Image
+        Source="/Assets/Collections4.png" Margin="276,432,111,184" Grid.Row="1"/>
+
+        <TextBlock
+        Text="DeFi"
+        FontSize="17"
+        FontWeight="Bold"
+        Margin="46,305,396,318" Grid.Row="1"/>
+        <TextBlock
+         Text="VR\AR"
+         FontSize="15"
+         FontWeight="Bold"
+         Margin="284,311,146,318" Grid.Row="1"/>
+        <TextBlock
+         Text="Платформы"
+         FontSize="15"
+         FontWeight="Bold"
+         Margin="43,475,344,154" Grid.Row="1"/>
+        <TextBlock
+         Text="Валюты"
+         FontSize="15"
+         FontWeight="Bold"
+         Margin="276,475,125,154" Grid.Row="1"/>
+        <TextBlock
+            Text="-0.81%"
+            Width="50"
+            Height="50"
+            Foreground="Red"
+            FontFamily="SF UI Display Normal"
+            Margin="43,373,399,233" Grid.Row="1"/>
+        <TextBlock
+        Text="-1.4%"
+        Width="50"
+        Foreground="Red"
+        FontFamily="SF UI Display Normal"
+        Margin="43,554,399,70" Grid.Row="1"/>
+        <TextBlock
+        Text="-1.75%"
+        Width="50"
+        Height="50"
+        Foreground="Red"
+        FontFamily="SF UI Display Normal"
+        Margin="287,373,155,233" Grid.Row="1"/>
+        <TextBlock
+        Text="-1.74%"
+        Width="50"
+        Foreground="Red"
+        FontFamily="SF UI Display Normal"
+        Margin="287,559,155,69" Grid.Row="1"/>
+
+
+    </Grid>
+</UserControl>

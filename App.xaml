@@ -1,0 +1,91 @@
+﻿<Application x:Class="LeoBank.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LeoBank"
+             xmlns:viewModel="clr-namespace:LeoBank.ViewModels"
+             xmlns:view="clr-namespace:LeoBank.Views"
+             xmlns:page="clr-namespace:LeoBank.Pages">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:MainWindowViewModel}">
+                <view:MainWindow/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:MainViewModel}">
+                <view:MainView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
+                <view:RegisterView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:AdminViewModel}">
+                <view:AdminView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:SuperAdminViewModel}">
+                <view:SuperAdminView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:CardViewModel}">
+                <view:CardView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:CrediteViewModel}">
+                <view:CrediteView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:InvestityViewModel}">
+                <view:InvestityView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:NDSViewModel}">
+                <view:NDSView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:OrderViewModel}">
+                <view:OrderView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ProfileSettingsViewModel}">
+                <view:ProfileSettingsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:NameRedactViewModel}">
+                <view:NameRedactView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:PhoneRedactViewModel}">
+                <view:PhoneRedactView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EmailRedactViewModel}">
+                <view:EmailRedactView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:PayBalanceViewModel}">
+                <view:PayBalanceView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AmountBalanceViewModel}">
+                <view:AmountBalancePayView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SuccestfulPayViewModel}">
+                <page:SuccestfulPay/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

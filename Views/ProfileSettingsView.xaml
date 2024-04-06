@@ -1,0 +1,217 @@
+﻿<UserControl x:Class="LeoBank.Views.ProfileSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeoBank.Views"
+             mc:Ignorable="d" 
+             Background="White"
+             xmlns:viewModel="clr-namespace:LeoBank.ViewModels"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DataContext="{d:DesignInstance Type=viewModel:ProfileSettingsViewModel}"
+             d:DesignHeight="854" d:DesignWidth="492">
+    <Grid>
+        <Button
+         Command="{Binding Back}"
+         HorizontalAlignment="Left"
+         VerticalAlignment="Top"
+         Width="57"
+         Height="40"
+         BorderThickness="0"
+         BorderBrush="Transparent"
+         FontFamily="SF UI Display Normal"
+         Background="Transparent" Margin="0,44,0,0">
+            <md:PackIcon
+         HorizontalAlignment="Center"
+         Height="32"
+         Width="38"
+         Foreground="#000"
+         Kind="ArrowBack" VerticalAlignment="Center"></md:PackIcon>
+        </Button>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Text="Настройки и профиль"
+        FontWeight="Bold"
+        Width="190"
+        Height="50"
+        FontSize="17"
+        FontFamily="SF UI Display Normal"
+        Margin="0,54,0,0"/>
+
+        <Border
+         CornerRadius="50" 
+         BorderBrush="Gray"
+         BorderThickness="0" Margin="206,104,123,582">
+            <Image Source="{Binding PhotoProfile}" Stretch="UniformToFill" Margin="-11,-4,57,73">
+                <Image.Clip>
+                    <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                </Image.Clip>
+            </Image>
+        </Border>
+
+        <Button
+        FontFamily="SF UI Display Normal"
+        Content="Редактировать"
+        HorizontalAlignment="Left"
+        Margin="177,212,0,604"
+        Command="{Binding Photo}"
+        BorderBrush="#EFEFEF"
+        Background="#EFEFEF"
+        BorderThickness="2"
+        Style="{DynamicResource MaterialDesignFlatLightBgButton}"
+        Foreground="Black"
+        md:ButtonAssist.CornerRadius="20"
+        Width="144"
+        Height="32"/>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Foreground="DarkGray"
+        Text="_________________________________________________________________________"
+        Width="472"
+        Height="37"
+        FontSize="15"
+        FontFamily="SF UI Display Normal"
+        Margin="0,258,0,0"/>
+
+        <Button
+        Command="{Binding Name}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="28,295,0,0" 
+        Height="58"
+        HorizontalAlignment="Left"
+        Foreground="White"
+        md:ButtonAssist.CornerRadius="27.5"
+        BorderBrush="White"
+        Background="#7B7FFF">
+            <md:PackIcon
+        Width="43" Kind="UserOutline" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+        <Button
+        Command="{Binding Phone}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="28,378,0,0" 
+        Height="58"
+        HorizontalAlignment="Left"
+        Foreground="White"
+        md:ButtonAssist.CornerRadius="27.5"
+        BorderBrush="White"
+        Background="#FF7093">
+            <md:PackIcon
+            Width="32" Kind="Smartphone" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+        <Button
+        Command="{Binding Email}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="28,466,0,0" 
+        Height="58"
+        HorizontalAlignment="Left"
+        Foreground="White"
+        md:ButtonAssist.CornerRadius="27.5"
+        BorderBrush="White"
+        Background="#8095AA">
+            <md:PackIcon
+        Width="32" Kind="At" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Foreground="DarkGray"
+        Text="_________________________________________________________________________"
+        Width="472"
+        Height="37"
+        FontSize="15"
+        FontFamily="SF UI Display Normal"
+        Margin="0,546,0,0"/>
+
+        <Button
+        Command="{Binding Exit}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="28,588,0,0" 
+        Height="58"
+        HorizontalAlignment="Left"
+        Foreground="#E78F8B"
+        md:ButtonAssist.CornerRadius="27.5"
+        BorderBrush="White"
+        Background="#FEF0EF">
+            <md:PackIcon
+        Width="32" Kind="ExitToApp" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <md:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </md:PackIcon.RenderTransform>
+            </md:PackIcon>
+        </Button>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        TextWrapping="Wrap"
+        Text="Выход"
+        Foreground="#E78F8B"
+        Width="114"
+        Height="34"
+        FontSize="18"
+        FontFamily="SF UI Display Normal"
+        Margin="77,607,0,0"/>
+
+        <TextBlock
+        Text="Как к вам обращаться?"
+        Margin="112,295,64,531"
+        Foreground="Gray"
+        FontSize="17"
+        FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+        Text="{Binding User.Name}"
+        Margin="112,323,64,503"
+        Foreground="Black"
+        FontSize="17"
+        FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+        Text="Телефон"
+        Margin="112,378,64,448"
+        Foreground="Gray"
+        FontSize="17"
+        FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+        Text="{Binding User.Phone}"
+        Margin="112,406,64,420"
+        Foreground="Black"
+        FontSize="17"
+        FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+        Text="Email"
+        Margin="112,466,64,360"
+        Foreground="Gray"
+        FontSize="17"
+        FontFamily="SF UI Display Normal"/>
+
+        <TextBlock
+        Text="{Binding User.Email}"
+        Margin="112,494,64,332"
+        Foreground="Black"
+        FontSize="17"
+        FontFamily="SF UI Display Normal"/>
+    </Grid>
+
+
+</UserControl>

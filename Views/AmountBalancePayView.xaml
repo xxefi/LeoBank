@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="LeoBank.Views.AmountBalancePayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeoBank.Views"
+             xmlns:viewModel="clr-namespace:LeoBank.ViewModels"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DataContext="{d:DesignInstance Type=viewModel:AmountBalanceViewModel}"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="854" d:DesignWidth="492">
+    <Grid>
+        <Button
+        Command="{Binding Back}"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Width="57"
+        Height="40"
+        BorderThickness="0"
+        BorderBrush="Transparent"
+        FontFamily="SF UI Display Normal"
+        Background="Transparent" Margin="0,44,0,0">
+            <md:PackIcon
+        HorizontalAlignment="Center"
+        Height="32"
+        Width="38"
+        Foreground="#000"
+        Kind="ArrowBack" VerticalAlignment="Center"></md:PackIcon>
+        </Button>
+
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Text="Пополнение баланса"
+        FontWeight="Bold"
+        Width="376"
+        Height="50"
+        FontSize="27"
+        FontFamily="SF UI Display Normal"
+        Margin="-18,99,0,0"/>
+
+        <TextBlock
+    Text="Введите сумму ниже"
+    Margin="33,138,105,688"
+    Foreground="Gray"
+    FontSize="19"
+    FontFamily="SF UI Display Normal"/>
+
+        <TextBox
+        Text="{Binding Amount}"
+        md:TextFieldAssist.UnderlineBrush="White"
+        TextAlignment="Center"
+        VerticalAlignment="Center"
+        FontWeight="Bold"
+        FontSize="27"
+        BorderBrush="White"
+        SelectionBrush="#000"
+        SelectionTextBrush="#000"
+        FontFamily="SF UI Display Normal"
+        Height="40"/>
+
+        <Button
+        Content="Пополнить баланс"
+        HorizontalAlignment="Center"
+        Margin="0,776,0,33"
+        Command="{Binding Pay}"
+        BorderBrush="Black"
+        Background="Black"
+        FontFamily="SF UI Display Normal"
+        BorderThickness="2"
+        FontSize="17"
+        Style="{DynamicResource MaterialDesignFlatLightBgButton}"
+        Foreground="White"
+        md:ButtonAssist.CornerRadius="20"
+        Width="402"
+        Height="45"/>
+    </Grid>
+</UserControl>

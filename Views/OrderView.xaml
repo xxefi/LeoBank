@@ -1,0 +1,410 @@
+﻿<UserControl x:Class="LeoBank.Views.OrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeoBank.Views"
+             xmlns:viewModel="clr-namespace:LeoBank.ViewModels"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DataContext="{d:DesignInstance Type=viewModel:OrderViewModel}"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="854" d:DesignWidth="492">
+    <Grid>
+        <Button
+        Command="{Binding DashBoard}"
+        Width="93" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="0,784,0,0" 
+        Height="70"
+        HorizontalAlignment="Left"
+        Foreground="Gray"
+        BorderBrush="White"
+        Background="White">
+            <StackPanel Orientation="Horizontal" Width="62" Height="61">
+                <md:PackIcon
+            Width="63"
+            Kind="HomeOutline"
+            Height="36"
+            RenderTransformOrigin="0.5,0.5"
+            VerticalAlignment="Center"/>
+                <TextBlock
+            Text="Главная"
+            FontFamily="SF UI Display Normal"
+            Margin="-65,50,0,0"
+            VerticalAlignment="Center"
+            FontSize="14" Width="53" Height="17"/>
+            </StackPanel>
+        </Button>
+        <Button
+        Command="{Binding Credite}"
+        Width="93" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="89,784,0,0" 
+        Height="70"
+        HorizontalAlignment="Left"
+        Foreground="Gray"
+        BorderBrush="White"
+        Background="White">
+            <StackPanel Orientation="Horizontal" Width="62" Height="64">
+                <md:PackIcon
+            Width="63"
+            Kind="ChartPieOutline"
+            Height="33"
+            RenderTransformOrigin="0.5,0.5"
+            VerticalAlignment="Center"/>
+                <TextBlock
+            Text="Кредит"
+            Margin="-65,50,0,0"
+            FontFamily="SF UI Display Normal"
+            VerticalAlignment="Center"
+            FontSize="13" Width="46" Height="19"/>
+            </StackPanel>
+        </Button>
+        <Button
+        Command="{Binding Investity}"
+        Width="114" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="181,785,0,0" 
+        Height="70"
+        HorizontalAlignment="Left"
+        Foreground="Gray"
+        BorderBrush="White"
+        Background="White">
+            <StackPanel Orientation="Horizontal" Width="78" Height="64">
+                <md:PackIcon
+            Width="78"
+            Kind="PollBoxOutline"
+            Height="31"
+            RenderTransformOrigin="0.5,0.5"
+            VerticalAlignment="Center"/>
+                <TextBlock
+            Text="Инвестиции"
+            Margin="-77,50,0,0"
+            FontFamily="SF UI Display Normal"
+            VerticalAlignment="Center"
+            FontSize="13" Width="76" Height="21"/>
+            </StackPanel>
+        </Button>
+        <Button
+            Command="{Binding EDV}"
+            Width="117" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Margin="287,785,0,0" 
+            Height="70"
+            HorizontalAlignment="Left"
+            Foreground="Gray"
+            BorderBrush="White"
+            Background="White">
+            <StackPanel Orientation="Horizontal" Width="91" Height="64">
+                <md:PackIcon
+            Width="92"
+            Kind="ReceiptClockOutline"
+            Height="31"
+            RenderTransformOrigin="0.5,0.5"
+            VerticalAlignment="Center"/>
+                <TextBlock
+            Text="Возврат НДС"
+            Margin="-91,50,0,0"
+            FontFamily="SF UI Display Normal"
+            VerticalAlignment="Center"
+            FontSize="13" Width="84" Height="19"/>
+            </StackPanel>
+        </Button>
+        <Button
+        Command="{Binding Order}"
+        Width="83" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="390,785,0,0" 
+        Height="70"
+        HorizontalAlignment="Left"
+        Foreground="Black"
+        BorderBrush="White"
+        Background="White">
+            <StackPanel Orientation="Horizontal" Width="78" Height="64">
+                <md:PackIcon
+            Width="78"
+            Kind="MoreVert"
+            Height="34"
+            RenderTransformOrigin="0.5,0.5"
+            VerticalAlignment="Center">
+                    <md:PackIcon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </md:PackIcon.RenderTransform>
+                </md:PackIcon>
+                <TextBlock
+            Text="Ещё"
+            Margin="-77,50,0,0"
+            FontFamily="SF UI Display Normal"
+            VerticalAlignment="Center"
+            FontSize="13" Width="28" Height="19"/>
+            </StackPanel>
+        </Button>
+        <Button
+            Command="{Binding CashBack}"
+            Width="59" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            Margin="25,63,0,0" 
+            Height="58"
+            HorizontalAlignment="Left"
+            Foreground="White"
+            md:ButtonAssist.CornerRadius="27.5"
+            BorderBrush="White"
+            Background="PaleVioletRed">
+            <md:PackIcon
+                Width="32" Kind="GiftOutline" Height="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        TextWrapping="Wrap"
+        Text="Кешбэк"
+        Width="130"
+        Height="34"
+        FontSize="15"
+        FontFamily="SF UI Display Normal"
+        Margin="-9,124,0,0"/>
+        <TextBlock
+        Text="0.00 ₼"
+        Margin="35,144,405,691"
+        Foreground="Gray"
+        FontSize="12"
+        FontFamily="SF UI Display Normal"/>
+        <Button
+        Command="{Binding CashBack}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="138,63,0,0" 
+        Height="58"
+        HorizontalAlignment="Left"
+        Foreground="White"
+        md:ButtonAssist.CornerRadius="27.5"
+        BorderBrush="White"
+        Background="#C7C757">
+            <md:PackIcon
+            Width="32" Kind="Shopping" Height="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        TextWrapping="Wrap"
+        Text="Копилка"
+        Width="130"
+        Height="34"
+        FontSize="15"
+        FontFamily="SF UI Display Normal"
+        Margin="103,125,0,0"/>
+        <TextBlock
+        Text="0 ₼"
+        Margin="155,145,294,690"
+        Foreground="Gray"
+        FontSize="12"
+        FontFamily="SF UI Display Normal"/>
+
+        <Button
+        Command="{Binding CashBack}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="266,63,0,0" 
+        Height="58"
+        HorizontalAlignment="Left"
+        Foreground="White"
+        md:ButtonAssist.CornerRadius="27.5"
+        BorderBrush="White"
+        Background="#FF957B">
+            <md:PackIcon
+        Width="32" Kind="EmailOutline" Height="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        TextWrapping="Wrap"
+        Text="Пригласить"
+        Width="130"
+        Height="34"
+        FontSize="15"
+        FontFamily="SF UI Display Normal"
+        Margin="231,125,0,0"/>
+        <TextBlock
+        Text="3 ₼ каждому"
+        Margin="255,143,134,692"
+        Foreground="Gray"
+        FontSize="14"
+        FontFamily="SF UI Display Normal"/>
+
+        <Button
+        Command="{Binding CashBack}"
+        Width="60" VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Margin="390,63,0,0" 
+        Height="58"
+        HorizontalAlignment="Left"
+        Foreground="White"
+        md:ButtonAssist.CornerRadius="27.5"
+        BorderBrush="White"
+        Background="#566DCB">
+            <md:PackIcon
+        Width="32" Kind="Poll" Height="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        TextWrapping="Wrap"
+        Text="Статистика трат"
+        Width="114"
+        Height="37"
+        FontSize="15"
+        FontFamily="SF UI Display Normal"
+        Margin="363,126,0,0"/>
+        <TextBlock
+        TextAlignment="Center"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Foreground="DarkGray"
+        Text="______________________________________________________________________"
+        Width="472"
+        Height="37"
+        FontSize="15"
+        FontFamily="SF UI Display Normal"
+        Margin="0,186,0,0"/>
+
+        <Button
+         Content="Настройки и профиль"
+         Command="{Binding ProfileSettings}"
+         Style="{StaticResource MaterialDesignFlatLightBgButton}"
+         Foreground="Black"
+         Margin="24,234,120,588"
+         Background="White"
+         BorderBrush="White"
+         FontSize="18"
+         FontFamily="SF UI Display Normal"/>
+
+        <Border
+            CornerRadius="50" 
+            BorderBrush="Gray"
+            BorderThickness="0" Margin="46,228,396,581">
+            <Image Source="{Binding User.PhotoProfile}" Stretch="UniformToFill" Margin="-11,-4,-7,-4">
+                <Image.Clip>
+                    <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
+                </Image.Clip>
+            </Image>
+        </Border>
+
+
+        <Button
+          Content="Курсы валют"
+          Style="{StaticResource MaterialDesignFlatLightBgButton}"
+          Foreground="Black"
+          Margin="24,306,186,516"
+          Background="White"
+          BorderBrush="White"
+          FontSize="19"
+          FontFamily="SF UI Display Normal"/>
+
+        <md:PackIcon
+        Width="36"
+        Kind="Public"
+        Foreground="#87919D"
+        Height="33"
+        RenderTransformOrigin="0.5,0.5" Margin="43,305,0,0"/>
+
+        <Button
+       Content="Частые вопросы"
+       Style="{StaticResource MaterialDesignFlatLightBgButton}"
+       Foreground="Black"
+       Margin="15,373,146,449"
+       Background="White"
+       BorderBrush="White"
+       FontSize="19"
+       FontFamily="SF UI Display Normal"/>
+
+
+        <md:PackIcon
+        Width="36"
+        Kind="HelpCircleOutline"
+        Foreground="#5B94E5"
+        Height="46"
+        RenderTransformOrigin="0.5,0.5" Margin="44,366,0,0"/>
+
+        <Button
+        Content="Тарифы"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Foreground="Black"
+        Margin="24,446,227,376"
+        Background="White"
+        BorderBrush="White"
+        FontSize="19"
+        FontFamily="SF UI Display Normal"/>
+
+        <md:PackIcon
+         Width="36"
+         Kind="DriveDocument"
+         Foreground="#5BC88E"
+         Height="46"
+         RenderTransformOrigin="0.5,0.5" Margin="43,439,0,0"/>
+
+        <Button
+        Content="Поддержка 24/7"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Foreground="Black"
+        Margin="43,523,160,299"
+        Background="White"
+        BorderBrush="White"
+        FontSize="19"
+        FontFamily="SF UI Display Normal"/>
+
+        <md:PackIcon
+          Width="36"
+          Kind="MessageTextOutline"
+          Foreground="#A68BF4"
+          Height="46"
+          RenderTransformOrigin="0.5,0.5" Margin="43,516,0,0"/>
+
+        <Button
+        Command="{Binding Instagram}"
+        Content="Leobank в Instagram"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Foreground="Black"
+        Margin="43,600,131,222"
+        Background="White"
+        BorderBrush="White"
+        FontSize="19"
+        FontFamily="SF UI Display Normal"/>
+
+        <md:PackIcon
+          Width="36"
+          Kind="Instagram"
+          Foreground="#EEA093"
+          Height="46"
+          RenderTransformOrigin="0.5,0.5" Margin="43,593,0,0"/>
+
+        <Button
+        Content="Точки пополнения"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        Foreground="Black"
+        Margin="43,679,146,143"
+        Background="White"
+        BorderBrush="White"
+        FontSize="19"
+        FontFamily="SF UI Display Normal"/>
+
+        <md:PackIcon
+          Width="36"
+          Kind="LocationOutline"
+          Foreground="#6ABEAE"
+          Height="46"
+          RenderTransformOrigin="0.5,0.5" Margin="43,672,0,0"/>
+
+        
+
+    </Grid>
+</UserControl>
